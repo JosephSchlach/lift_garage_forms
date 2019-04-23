@@ -16,10 +16,9 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import DamageNotation from '../DamageNotation/DamageNotation';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import SelectForm from '../SelectForm/SelectForm';
 
 import './App.css';
-import DamageNotation from '../DamageNotation/DamageNotation';
 
 class App extends Component {
   componentDidMount () {
@@ -60,7 +59,7 @@ class App extends Component {
             <ProtectedRoute
               exact
               path="/info"
-              component={InfoPage}
+              component={SelectForm}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

@@ -1,20 +1,43 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
+    background-color: #161616
 }
 
 .alert {
-    background-color: #ff4545;
-    margin: 50px;
+    margin: 15px;
+    text-align: center;
+    color: #161616;
 }
 
-form {
+/* form {
     background-color: #dbd5d5;
     width: 30%;
     height: 250px;
     margin: 20px auto;
     padding: 25px;
     border-radius: 2px;
+} */
+
+h2 {
+    font-family: 'Russo One', sans-serif;
+    color: #c4c4c4;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+h1 {
+    font-family: 'Russo One', sans-serif;
+    color: #c4c4c4;
+    text-align: center;
+    font-size: px;
+    margin-top: 20px;
+}
+
+.logInput {
+    margin-left: 18px;
+    margin-right: auto;
 }
 
 input {
@@ -32,10 +55,6 @@ input {
   cursor: pointer;
 }
 
-.log-in:hover, .log-out:hover, .register:hover {
-  background-color: #008183;
-}
-
 /* This line makes the "Register" and "Login" buttons look like links */
 .link-button {
     background:none;
@@ -47,4 +66,85 @@ input {
     border-bottom:1px solid #444; 
     cursor: pointer;
 }
+
+.inputForm {
+    background-color: #272727;
+    width: 95%;
+    height: 725px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.loginForm {
+    background-color: #646464;
+    width: 60%;
+    height: 80%;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding: 25px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.frontForm {
+    background-color: #646464;
+    width: 75%;
+    height: 80%;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding: 25px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.mainButton {
+    margin-top: 10px;
+    height: 50px;
+    width: 150px;
+    color: #c4c4c4;
+    background-color: #424242;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    border: 0px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mainButton:hover {
+    background-color: #cd9f2b;
+  }
+
+  a:link {
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    text-decoration: none;
+    color: #c4c4c4;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    text-decoration: none;
+    color: #c4c4c4;;
+  }
+  
+  /* selected link */
+  a:active {
+    text-decoration: none;
+    color: #c4c4c4;;
+  }
 

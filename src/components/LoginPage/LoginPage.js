@@ -31,7 +31,8 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div>
+      <section className='inputForm'>
+      <div className='loginForm'>
         {this.props.errors.loginMessage && (
           <h2
             className="alert"
@@ -45,7 +46,9 @@ class LoginPage extends Component {
           <div>
             <label htmlFor="username">
               Username:
+              <br />
               <input
+                className='logInput'
                 type="text"
                 name="username"
                 value={this.state.username}
@@ -56,7 +59,9 @@ class LoginPage extends Component {
           <div>
             <label htmlFor="password">
               Password:
+              <br />
               <input
+              className='logInput'
                 type="password"
                 name="password"
                 value={this.state.password}
@@ -66,7 +71,7 @@ class LoginPage extends Component {
           </div>
           <div>
             <input
-              className="log-in"
+              className="mainButton"
               type="submit"
               name="submit"
               value="Log In"
@@ -75,14 +80,15 @@ class LoginPage extends Component {
         </form>
         <center>
           <button
+            className="mainButton"
             type="button"
-            className="link-button"
             onClick={() => {this.props.dispatch({type: 'SET_TO_REGISTER_MODE'})}}
           >
             Register
           </button>
         </center>
       </div>
+      </section>
     );
   }
 }

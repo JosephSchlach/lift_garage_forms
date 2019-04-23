@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import './AddItem.css'
+
+
 
 class AddItem extends Component {
 
@@ -46,8 +47,8 @@ class AddItem extends Component {
     console.log(this.props.item)
     console.log(this.props.reduxState.itemListReducer)
     return (
-    <section>
         <section className='inputForm'>
+        <div className='frontForm'>
         <h2>Damage Notation Form</h2>
         <br />
         <form className='addItem'>
@@ -86,7 +87,7 @@ class AddItem extends Component {
       </button>
         </form>
         <pre>{JSON.stringify(this.state)}</pre>
-        </section>
+        </div>
     </section>
     )
   }
