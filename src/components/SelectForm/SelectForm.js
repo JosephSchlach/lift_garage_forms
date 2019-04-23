@@ -12,7 +12,6 @@ const InfoPage = () => (
     <div className='loginForm'>
      <h2>Select Form</h2>
      <div className="forms">
-
      <button className="mainButton">
        <Link to="/damageform">
            Damage Notation

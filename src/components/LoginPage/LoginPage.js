@@ -43,6 +43,7 @@ class LoginPage extends Component {
         )}
         <form onSubmit={this.login}>
           <h1>Login</h1>
+          <div className="forms">
           <div>
             <label htmlFor="username">
               Username:
@@ -76,6 +77,7 @@ class LoginPage extends Component {
               name="submit"
               value="Log In"
             />
+          </div>
           </div>
         </form>
         <center>

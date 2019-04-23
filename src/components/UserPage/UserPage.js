@@ -11,8 +11,9 @@ const UserPage = (props) => (
     <h1 id="welcome">
       Welcome, { props.user.username }!
     </h1>
-  
+    <div className="forms">
     <LogOutButton className="mainButton" />
+    </div>
   </div>
   </section>
 );

@@ -1,7 +1,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
-    background-color: #161616
+    /* background-color: #161616; */
+    background-color: #272727;
 }
 
 .alert {
@@ -20,24 +21,24 @@ body {
 } */
 
 h2 {
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    color: #c4c4c4;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
     color: #c4c4c4;
     text-align: center;
     font-size: 50px;
     margin-top: 20px;
 }
 
-h1 {
-    font-family: 'Russo One', sans-serif;
-    color: #c4c4c4;
-    text-align: center;
-    font-size: px;
-    margin-top: 20px;
-}
-
 .logInput {
-    margin-left: 18px;
-    margin-right: auto;
+    width:100%;
 }
 
 input {
@@ -67,7 +68,7 @@ input {
     cursor: pointer;
 }
 
-.inputForm {
+/* .inputForm {
     background-color: #272727;
     width: 95%;
     height: 725px;
@@ -78,12 +79,12 @@ input {
     padding: 0px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-}
+} */
 
 .loginForm {
     background-color: #646464;
     width: 60%;
-    height: 80%;
+    height: 500px;
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
@@ -104,6 +105,14 @@ input {
     padding: 25px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+.forms {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    width: 150px;
 }
 
 .mainButton {

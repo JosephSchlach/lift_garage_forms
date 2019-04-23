@@ -31,6 +31,7 @@ class AddItem extends Component {
 
       handleSubmit = (event) => {
         event.preventDefault();
+        console.log(this.state.newItem)
         this.props.dispatch({type: 'ADD_ITEM', payload: this.state.newItem})
         this.setState({
             newItem:{
@@ -44,8 +45,7 @@ class AddItem extends Component {
 
   // Renders the entire app on the DOM
   render() {
-    console.log(this.props.item)
-    console.log(this.props.reduxState.itemListReducer)
+    console.log(this.state.newItem)
     return (
         <section className='inputForm'>
         <div className='frontForm'>
@@ -80,11 +80,14 @@ class AddItem extends Component {
         <br />
         <br />
         <br />
-        <button className="damageButton" onClick={this.handleSubmit}>
-       <Link to="/home">
+        <div className="forms">
+        <button className="mainButton" onClick={this.handleSubmit}>
+       <Link
+       to="/info">
        Submit Form
         </Link>
       </button>
+      </div>
         </form>
         <pre>{JSON.stringify(this.state)}</pre>
         </div>

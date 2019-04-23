@@ -6,9 +6,9 @@ const router = express.Router();
  * GET route template
  */
 router.get('/', (req, res) => {
- const sqlText = `SELECT "item"."id" AS "item_id", "item"."description",
-    "item"."fixable", "item"."status","item"."user_id", "user"."username" FROM "item"
-    JOIN "user" ON "user"."id" = "item"."user_id";`;
+ const sqlText = `SELECT "damage_notation"."id" AS "DMG Form", "damage_notation"."description",
+    "damage_notation"."fixable", "damage_notation"."status","damage_notation"."user_id", "user"."username" FROM "damage_notation"
+    JOIN "user" ON "user"."id" = "damage_notation"."user_id";`;
 
 pool.query(sqlText)
     .then(response => {
@@ -24,11 +24,11 @@ pool.query(sqlText)
  * POST route template
  */
 router.post('/', (req, res) => {
-let item = req.body
-console.log( item );
-const sqlText = `INSERT INTO "item" ("description", "fixable", "status", "user_id") VALUES ($1, $2, $3, $4);`;
+let damage_notation = req.body
+console.log( damage_notation );
+const sqlText = `INSERT INTO "damage_notation" ("description", "fixable", "status", "user_id") VALUES ($1, $2, $3, $4);`;
 pool.query(sqlText,
-[ item.description, item.fixable, item.status, item.user_id ]
+[ damage_notation.description, damage_notation.fixable, damage_notation.status, damage_notation.user_id ]
 )
 .then((result) => {
     res.sendStatus(201);
@@ -41,23 +41,23 @@ pool.query(sqlText,
 
 
 /**
- * Delete an item if it's something the logged in user added
+ * Delete an damage_notation form if it's something the logged in user added
  */
 router.delete('/:id', (req, res) => {
     const id = req.params.id;
-    const sqlText = `DELETE FROM "item" WHERE "item"."id" = $1`;
+    const sqlText = `DELETE FROM "damage_notation" WHERE "damage_notation"."id" = $1`;
     pool.query(sqlText, [id])
         .then(() => {
             res.sendStatus(200);
         }).catch(error => {
-            console.log('error deleting item:', error);
+            console.log('error deleting form:', error);
             res.sendStatus(500);
         })
 });
 
 
 /**
- * Update an item if it's something the logged in user added
+ * Update an damage_notation form if it's something the logged in user added
  */
 router.put('/:id', (req, res) => {
 

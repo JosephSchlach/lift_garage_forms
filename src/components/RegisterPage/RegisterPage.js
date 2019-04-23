@@ -43,7 +43,7 @@ class RegisterPage extends Component {
         )}
         <form onSubmit={this.registerUser}>
           <h1>Register User</h1>
-          <div>
+          <div className="forms">
             <label htmlFor="username">
               Username:
               <input
@@ -65,6 +65,7 @@ class RegisterPage extends Component {
               />
             </label>
           </div>
+          <center>
           <div>
             <input
               className="mainButton"
@@ -73,6 +74,7 @@ class RegisterPage extends Component {
               value="Register"
             />
           </div>
+          </center>
         </form>
         <center>
           <button
