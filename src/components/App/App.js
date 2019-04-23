@@ -14,10 +14,12 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 import AboutPage from '../AboutPage/AboutPage';
+import DamageNotation from '../DamageNotation/DamageNotation';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 
 import './App.css';
+import DamageNotation from '../DamageNotation/DamageNotation';
 
 class App extends Component {
   componentDidMount () {
@@ -43,6 +45,11 @@ class App extends Component {
             Visiting localhost:3000/home will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
+            <ProtectedRoute
+              exact
+              path="/damageform"
+              component={DamageNotation}
+            />
             <ProtectedRoute
               exact
               path="/home"
