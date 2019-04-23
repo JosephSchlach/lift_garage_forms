@@ -14,7 +14,7 @@ function* deleteItemSaga(action) {
 }
 
 function* deleteSaga() {
-    yield takeLatest('DELETE_ITEM', deleteItemSaga);
+    yield takeLatest('DELETE_FORM', deleteItemSaga);
   }
 
   export default deleteSaga;

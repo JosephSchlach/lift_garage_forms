@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import FormItem from '../FormItem/FormItem';
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
+class AboutPage extends Component {
 
-const AboutPage = () => (
-  <section className='inputForm'>
-  <div className='loginForm'>
-    <div>
-      <p>
-        Something to fill in at some point.... 
-      </p>
-    </div>
-  </div>
-  </section>
-);
+    componentDidMount() {
+        this.props.dispatch({ type: 'GET_FORM' });
+    }
 
-export default AboutPage;
+    render() {
+        return (
+            <section>
+                {this.props.reduxState.formReducer.map(item =>
+                    <FormItem key={item.item_id} item={item} />
+                )}
+            </section>
+        )
+    }
+}
+
+const mapStateToProps = reduxState => ({
+    reduxState,
+});
+
+export default connect(mapStateToProps)(withRouter(AboutPage));
