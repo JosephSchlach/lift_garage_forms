@@ -12,11 +12,13 @@ class FormItem extends Component {
     render() {
         console.log(this.props.item);
         return (
-            <div>
+            <div className="formCard">
+              <div className='innerDiv'>
                 <p>Whats Broken: {this.props.item.description}</p>
                 <p>Fixable: {this.props.item.fixable}</p>
                 <p>Status: {this.props.item.status}</p>
-                <button onClick={this.deleteItem} className="mainButton">Delete</button>
+                </div>
+                <button onClick={this.deleteItem} className="deleteButton">Delete</button>
             </div>
         )
     }

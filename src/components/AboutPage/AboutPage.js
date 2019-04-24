@@ -11,10 +11,12 @@ class AboutPage extends Component {
 
     render() {
         return (
-            <section>
+            <section className='inputForm'>
+            <div className='frontForm'>
                 {this.props.reduxState.formReducer.map(item =>
                     <FormItem key={item.item_id} item={item} />
                 )}
+            </div>
             </section>
         )
     }

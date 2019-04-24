@@ -2,6 +2,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
     /* background-color: #161616; */
+
     background-color: #272727;
 }
 
@@ -19,6 +20,15 @@ body {
     padding: 25px;
     border-radius: 2px;
 } */
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
 
 h2 {
     font-family: 'Oswald', sans-serif;
@@ -42,7 +52,6 @@ h1 {
 }
 
 input {
-    margin: 5px;
     margin-bottom: 10px;
 }
 
@@ -63,7 +72,7 @@ input {
     padding:0;
     font: inherit;
     outline:0;
-    border-bottom:1px solid #444; 
+    border-bottom:1px solid #444;
     cursor: pointer;
 }
 
@@ -83,7 +92,7 @@ input {
 .loginForm {
     background-color: #9c9c9c;
     width: 60%;
-    height: 500px;
+    height: 80%;
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
@@ -130,6 +139,23 @@ input {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.deleteButton {
+    margin-top: 10px;
+    height: 50px;
+    width: 250px;
+    color: #ffffff;
+    background-color: #424242;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 0px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .mainButton:hover {
     background-color: #cd9f2b;
   }
@@ -137,22 +163,69 @@ input {
   a:link {
     text-decoration: none;
   }
-  
+
   /* visited link */
   a:visited {
     text-decoration: none;
     color: #ffffff;
   }
-  
+
   /* mouse over link */
   a:hover {
     text-decoration: none;
     color: #ffffff;;
   }
-  
+
   /* selected link */
   a:active {
     text-decoration: none;
     color: #ffffff;;
   }
 
+.formCard {
+    max-width: 250px;
+    max-height: 1000px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.innerDiv {
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    width: 150px;
+}
+
+.newVehicle {
+    max-width: 330px;
+    height:175px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.NewVRow1 {
+    margin:20px;
+    display: inline-block;
+    width: 125px;
+}
+.NewVRow2 {
+    margin:20px;
+    display: inline-block;
+    width: 125px;
+}
+
+label {
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.vinput {
+    width:143px;
+}
