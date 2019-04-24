@@ -2,7 +2,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
     /* background-color: #161616; */
-
     background-color: #272727;
 }
 
@@ -12,18 +11,9 @@ body {
     color: #161616;
 }
 
-/* form {
-    background-color: #dbd5d5;
-    width: 30%;
-    height: 250px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 2px;
-} */
-
 h3 {
     font-family: 'Oswald', sans-serif;
-    color: #ffffff;
+    color: #2f5e68;
     text-align: center;
     font-size: 25px;
     margin-top: 10px;
@@ -32,7 +22,7 @@ h3 {
 
 h2 {
     font-family: 'Oswald', sans-serif;
-    color: #ffffff;
+    color: #2f5e68;
     text-align: center;
     font-size: 50px;
     margin-top: 20px;
@@ -41,7 +31,7 @@ h2 {
 
 h1 {
     font-family: 'Oswald', sans-serif;
-    color: #ffffff;
+    color: #2f5e68;
     text-align: center;
     font-size: 50px;
     margin-top: 20px;
@@ -53,15 +43,16 @@ h1 {
 
 input {
     margin-bottom: 10px;
+    border-radius: 4px;
 }
 
 .log-in, .log-out, .register {
-  border-radius: 4px;
-  color: #ffffff;
-  min-height: 50px;
-  min-width: 100px;
-  outline:0;
-  cursor: pointer;
+    border-radius: 4px;
+    color: #ffffff;
+    min-height: 50px;
+    min-width: 100px;
+    outline:0;
+    cursor: pointer;
 }
 
 /* This line makes the "Register" and "Login" buttons look like links */
@@ -76,21 +67,8 @@ input {
     cursor: pointer;
 }
 
-/* .inputForm {
-    background-color: #272727;
-    width: 95%;
-    height: 725px;
-    margin-top: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    padding: 0px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-} */
-
 .loginForm {
-    background-color: #9c9c9c;
+    background-color: #bbbbbb;
     width: 60%;
     height: 80%;
     margin-top: 0px;
@@ -103,7 +81,7 @@ input {
 }
 
 .frontForm {
-    background-color: #9c9c9c;
+    background-color: #bbbbbb;
     width: 75%;
     height: 80%;
     margin-top: 0px;
@@ -159,23 +137,19 @@ input {
 .mainButton:hover {
     background-color: #cd9f2b;
   }
-
   a:link {
     text-decoration: none;
   }
-
   /* visited link */
   a:visited {
     text-decoration: none;
     color: #ffffff;
   }
-
   /* mouse over link */
   a:hover {
     text-decoration: none;
     color: #ffffff;;
   }
-
   /* selected link */
   a:active {
     text-decoration: none;
@@ -218,8 +192,8 @@ img {
 }
 
 label {
-    font-family: 'Oswald', sans-serif;
-    color: #ffffff;
+    font-family: 'Arvo', serif;
+    color: #505050;
     text-align: center;
     font-size: 15px;
     margin-top: 10px;
@@ -228,4 +202,5 @@ label {
 
 .vinput {
     width:143px;
+    border-radius: 4px;
 }

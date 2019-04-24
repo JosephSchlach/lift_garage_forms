@@ -77,7 +77,8 @@ render() {
         </div>
         </div>
         <br />
-          <h3>Search VIN</h3>
+          <h3>SEARCH VIN</h3>
+          <br />
         <form onSubmit={this.handleSubmit}>
         <div className="forms">
             <label>VIN:</label>
@@ -88,17 +89,17 @@ render() {
                    value={this.state.newVIN.vin}/>
                    </div>
                    <div className="forms">
-                    <button className="mainButton" type="submit">Search</button>
+                    <button className="mainButton" type="submit">SEARCH</button>
                   </div>
           </form>
           <br />
           <div className="addVehicle">
           <br />
-          <h3>Add Vehicle</h3>
+          <h3>ADD VEHICLE</h3>
           <form onSubmit={this.handleSubmit}>
           <div className='newVehicle'>
           <div className='NewVRow1'>
-            <label>Customer Name:</label>
+            <label>Customer:</label>
             <br />
             <input type="text" name="customer_name"
                    onChange={this.handleChangeFor}
@@ -117,7 +118,7 @@ render() {
                    value={this.state.newCar.year}></input>
             </div>
             <div className='NewVRow2'>
-            <label>vin:</label>
+            <label>VIN:</label>
             <br />
             <input type="text" name="vin"
                    onChange={this.handleChangeFor}
@@ -135,9 +136,12 @@ render() {
             </div>
             </div>
             <div className="forms">
-            <button className="mainButton" type="submit">Add</button>
+            <button className="mainButton" type="submit">ADD</button>
             </div>
           </form>
+          <pre>{JSON.stringify(this.state)}</pre>
+          <br />
+          <br />
         </div>
 
   </div>

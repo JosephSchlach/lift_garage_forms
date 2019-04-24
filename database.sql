@@ -8,3 +8,13 @@ CREATE TABLE "user" (
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL
 );
+
+CREATE TABLE "vehicle" (
+    "id" SERIAL PRIMARY KEY,
+    "vin" VARCHAR (80) NOT NULL,
+    "year" INT NOT NULL,
+    "make" VARCHAR (80) NOT NULL,
+    "model" VARCHAR (80) NOT NULL,
+    "license_plate" VARCHAR (15) NOT NULL,
+    "customer_name" VARCHAR (80) NOT NULL
+);

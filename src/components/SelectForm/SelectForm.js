@@ -38,6 +38,9 @@ const InfoPage = () => (
            Checkout Checklist
         </Link>
       </button>
+      <br />
+      <br />
+      <br />
      </div>
      </div>
      </section>
