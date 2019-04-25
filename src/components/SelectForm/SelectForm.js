@@ -5,25 +5,25 @@ import { Link } from 'react-router-dom';
 const InfoPage = () => (
     <section className='inputForm'>
     <div className='loginForm'>
-     <h2>Select Form</h2>
+     <h2>SELECT FORM</h2>
      <div className="forms">
       <button className="mainButton">
-       <Link to="/damageform">Damage Notation</Link>
+       <Link to="/damageform">DAMAGE NOTATION</Link>
       </button>
       {/* <div className='formStatusComplete'>Complete</div> */}
         <br />
       <button className="mainButton">
-       <Link to="/damageform">Pre-Purchase</Link>
+       <Link to="/damageform">PRE-PURCHASE</Link>
       </button>
       {/* <div className='formStatusComplete'>Complete</div> */}
         <br />
       <button className="mainButton">
-       <Link to="/damageform">Diagnostic Summary</Link>
+       <Link to="/damageform">DIAGNOSTIC SUMMARY</Link>
       </button>
       {/* <div className='formStatusProgress'>In Progress</div> */}
         <br />
       <button className="mainButton">
-        <Link to="/damageform">Checkout Checklist</Link>
+        <Link to="/damageform">CHECKOUT CHECKLIST</Link>
       </button>
         <br />
         <br />

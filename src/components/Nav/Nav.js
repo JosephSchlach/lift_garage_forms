@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+{/* <FontAwesomeIcon icon='warehouse' spin /> */}
+
 const Nav = (props) => (
   <div className="nav">
     <Link to="/home">
@@ -22,8 +25,8 @@ const Nav = (props) => (
           <Link className="nav-link" to="/info">
             Select Form
           </Link>
-          <Link className="nav-link" to="/about">
-            Card View
+          <Link className="nav-link" to="/table">
+            Car Table
           </Link>
           <LogOutButton className="nav-link"/>
         </>

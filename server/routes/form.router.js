@@ -19,16 +19,18 @@ pool.query(sqlText)
     });
 });
 
-
 /**
  * POST route template
  */
 router.post('/', (req, res) => {
 let damage_notation = req.body
 console.log( damage_notation );
-const sqlText = `INSERT INTO "damage_notation" ("description", "fixable", "status", "user_id") VALUES ($1, $2, $3, $4);`;
+const sqlText = `INSERT INTO "damage_notation" ("date", "abs", "ac", "four_wheel_disc", "drive_type", "fuel_level", "drivable", "hubcaps", "dash_lights", "vehicle_damage_notes", "misc_notes", "complete")
+VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12);`;
 pool.query(sqlText,
-[ damage_notation.description, damage_notation.fixable, damage_notation.status, damage_notation.user_id ]
+[ damage_notation.date, damage_notation.abs, damage_notation.ac, damage_notation.four_wheel_disc,
+    damage_notation.drive_type, damage_notation.fuel_level, damage_notation.drivable, damage_notation.hubcaps,
+    damage_notation.dash_lights, damage_notation.vehicle_damage_notes, damage_notation.misc_notes, damage_notation.complete ]
 )
 .then((result) => {
     res.sendStatus(201);

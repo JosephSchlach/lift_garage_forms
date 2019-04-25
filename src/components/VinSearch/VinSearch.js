@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-
+import './VinSearch.css';
 
 
 class VinSearch extends Component {
@@ -23,48 +23,48 @@ class VinSearch extends Component {
     }
   }
 
-  handleChangeFor = (event) => {
-    // event.target.name is coming from name attribute on input field
-    let propertyName = event.target.name;
-    console.log('Property:', propertyName);
-    this.setState({
-      newCar: {
-        ...this.state.newCar,
-        // event.target.value has the value (typed in) from the input field
-        [propertyName]: event.target.value,
-      }
-    })
-  }
+handleChangeFor = (event) => {
+  // event.target.name is coming from name attribute on input field
+  let propertyName = event.target.name;
+  console.log('Property:', propertyName);
+  this.setState({
+    newCar: {
+      ...this.state.newCar,
+      // event.target.value has the value (typed in) from the input field
+      [propertyName]: event.target.value,
+    }
+  })
+}
 
-  handleChangeForVIN = (event) => {
-    // event.target.name is coming from name attribute on input field
-    let propertyName = event.target.name;
-    console.log('Property:', propertyName);
-    this.setState({
-      newVIN: {
-        ...this.state.newVIN,
-        // event.target.value has the value (typed in) from the input field
-        [propertyName]: event.target.value,
-      }
-    })
-  }
+handleChangeForVIN = (event) => {
+  // event.target.name is coming from name attribute on input field
+  let propertyName = event.target.name;
+  console.log('Property:', propertyName);
+  this.setState({
+    newVIN: {
+      ...this.state.newVIN,
+      // event.target.value has the value (typed in) from the input field
+      [propertyName]: event.target.value,
+    }
+  })
+}
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(this.state.newCar)
-    this.props.dispatch({type: 'ADD_CAR', payload: this.state.newCar})
-    this.setState({
-      newCar: {
-        vin: '',
-        year: '',
-        make: '',
-        model: '',
-        license_plate: '',
-        customer_name: '',
-        codes:'',
-      },
-    })
-  }
+handleSubmit = (event) => {
+  event.preventDefault();
+  console.log(this.state.newCar)
+  this.props.dispatch({type: 'ADD_CAR', payload: this.state.newCar})
+  this.setState({
+    newCar: {
+      vin: '',
+      year: '',
+      make: '',
+      model: '',
+      license_plate: '',
+      customer_name: '',
+      codes:'',
+    },
+  })
+}
 
 
 render() {
@@ -81,19 +81,21 @@ render() {
           <br />
         <form onSubmit={this.handleSubmit}>
         <div className="forms">
-            <label>VIN:</label>
+          <label>VIN:</label>
             <br />
-            <input className='vinput'
-                   type="text" name="vin"
-                   onChange={this.handleChangeForVIN}
-                   value={this.state.newVIN.vin}/>
-                   </div>
-                   <div className="forms">
-                    <button className="mainButton" type="submit">SEARCH</button>
-                  </div>
+          <input className='vinput'
+              type="text" name="vin"
+              onChange={this.handleChangeForVIN}
+              value={this.state.newVIN.vin}/>
+        </div>
+            <div className="forms">
+              <button className="mainButton" type="submit">
+              <Link to="/table"></Link>SEARCH</button>
+            </div>
           </form>
           <br />
           <div className="addVehicle">
+          <br />
           <br />
           <h3>ADD VEHICLE</h3>
           <form onSubmit={this.handleSubmit}>
@@ -139,7 +141,6 @@ render() {
             <button className="mainButton" type="submit">ADD</button>
             </div>
           </form>
-          <pre>{JSON.stringify(this.state)}</pre>
           <br />
           <br />
         </div>

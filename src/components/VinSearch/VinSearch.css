@@ -1,0 +1,23 @@
+.vinput {
+    width:143px;
+    border-radius: 4px;
+}
+
+.newVehicle {
+    max-width: 330px;
+    height:175px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.NewVRow1 {
+    margin:20px;
+    display: inline-block;
+    width: 125px;
+}
+
+.NewVRow2 {
+    margin:20px;
+    display: inline-block;
+    width: 125px;
+}
