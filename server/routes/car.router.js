@@ -3,11 +3,11 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 router.post('/', (req, res) => {
-    let damage_notation = req.body
-    console.log( damage_notation );
-    const sqlText = `INSERT INTO "damage_notation" ("description", "fixable", "status", "user_id") VALUES ($1, $2, $3, $4);`;
+    let vehicle = req.body
+    console.log( vehicle );
+    const sqlText = `INSERT INTO "vehicle" ("vin", "year", "make", "model", "license_plate", "customer_name") VALUES ($1, $2, $3, $4, $5, $6);`;
     pool.query(sqlText,
-    [ damage_notation.description, damage_notation.fixable, damage_notation.status, damage_notation.user_id ]
+    [ vehicle.vin, vehicle.year, vehicle.make, vehicle.model, vehicle.license_plate, vehicle.customer_name ]
     )
     .then((result) => {
         res.sendStatus(201);
@@ -18,5 +18,4 @@ router.post('/', (req, res) => {
     });
     });
 
-
-    start here!!
+    module.exports = router;
