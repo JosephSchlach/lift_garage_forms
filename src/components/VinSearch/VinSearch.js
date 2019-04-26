@@ -64,6 +64,7 @@ handleSubmit = (event) => {
       codes:'',
     },
   })
+  this.props.history.push('/damageform')
 }
 
 
@@ -138,13 +139,14 @@ render() {
             </div>
             </div>
             <div className="forms">
-            <button className="mainButton" type="submit">ADD</button>
+            <button type="submit" className="mainButton">
+            ADD
+            </button>
             </div>
           </form>
           <br />
           <br />
         </div>
-
   </div>
 </section>
 );

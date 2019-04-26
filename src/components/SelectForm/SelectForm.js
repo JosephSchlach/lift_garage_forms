@@ -23,7 +23,7 @@ const InfoPage = () => (
       {/* <div className='formStatusProgress'>In Progress</div> */}
         <br />
       <button className="mainButton">
-        <Link to="/damageform">CHECKOUT CHECKLIST</Link>
+        <Link to="/checkout">CHECKOUT CHECKLIST</Link>
       </button>
         <br />
         <br />

@@ -14,6 +14,7 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 import DamageNotation from '../DamageNotation/DamageNotation';
+import CheckOut from '../CheckOut/CheckOut';
 import VinSearch from '../VinSearch/VinSearch';
 import SelectForm from '../SelectForm/SelectForm';
 import CarTable from '../CarTable/CarTable';
@@ -44,6 +45,11 @@ class App extends Component {
               exact
               path="/damageform"
               component={DamageNotation}
+            />
+             <ProtectedRoute
+              exact
+              path="/checkout"
+              component={CheckOut}
             />
             <ProtectedRoute
               exact

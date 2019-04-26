@@ -42,8 +42,24 @@ h1 {
 }
 
 input {
-    margin-bottom: 10px;
+  width: 100%;
+  padding: 12px 5px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height:10px;
+    /* margin-bottom: 10px;
+    border-radius: 4px; */
+}
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .log-in, .log-out, .register {
