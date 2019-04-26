@@ -11,6 +11,10 @@ body {
     color: #161616;
 }
 
+p{
+    margin:0px;
+}
+
 h3 {
     font-family: 'Oswald', sans-serif;
     color: #2f5e68;

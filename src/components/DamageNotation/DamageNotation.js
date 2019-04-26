@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
 
@@ -56,6 +56,7 @@ handleSubmit = (event) => {
         complete: '',
     },
   })
+  this.props.history.push('/info')
 }
 
 
@@ -186,20 +187,20 @@ render() {
                    onChange={this.handleChangeFor('misc_notes')}
                    value={this.state.newItem.misc_notes}></input>
               <br />
-            <label>Done?</label>
-               <br />
+            <label>Form status:</label>
+              <br />
             <select value={this.state.newItem.status}
                     onChange={this.handleChangeFor('status')}>
                 <option></option>
                 <option value="in_progress">In Progress</option>
                 <option value="complete">Complete</option>
-        </select>
-            <br />
-            <br />
-            <br />
+            </select>
+              <br />
+              <br />
+              <br />
         <div className="forms">
           <button className="mainButton" onClick={this.handleSubmit}>
-            <Link to="/info">Submit Form</Link>
+           Submit Form
           </button>
         </div>
         </form>

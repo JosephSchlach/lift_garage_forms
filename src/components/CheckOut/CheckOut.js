@@ -21,7 +21,7 @@ state ={
         unnecessary_parts: '',
         test_drive_notes: '',
         ready_for_customer: '',
-        complete: '',
+        status: '',
         user_id: this.props.reduxState.user.id,
         // job_id: this.props.reduxState.job.id,
     }
@@ -57,9 +57,10 @@ handleSubmit = (event) => {
         unnecessary_parts: '',
         test_drive_notes: '',
         ready_for_customer: '',
-        complete: '',
+        status: '',
     },
   })
+this.props.history.push('/info')
 }
 
 
@@ -179,11 +180,39 @@ render() {
                 <option value="done">Done</option>
                 <option value="not_done">Not Done</option>
             </select>
-
-
+              <br />
+            <label>Any parts or quoted labor that were not needed:</label>
+              <br />
+            <input type="text" name="date"
+                   onChange={this.handleChangeFor('unnecessary_parts')}
+                   value={this.state.newCheckout.unnecessary_parts}></input>
+              <br />
+            <label>Final test drive notes:</label>
+              <br />
+            <input type="text" name="date"
+                   onChange={this.handleChangeFor('test_drive_notes')}
+                   value={this.state.newCheckout.test_drive_notes}></input>
+              <br />
+            <label>Is vehicle ready to be released to customer:</label>
+              <br />
+            <select value={this.state.newCheckout.ready_for_customer}
+                    onChange={this.handleChangeFor('ready_for_customer')}>
+                <option></option>
+                <option value="yes">Yes</option>
+                <option value="no">No Done</option>
+            </select>
+              <br />
+            <label>Status:</label>
+              <br />
+            <select value={this.state.newCheckout.status}
+                    onChange={this.handleChangeFor('status')}>
+                <option></option>
+                <option value="in_progress">In Progress</option>
+                <option value="complete">Complete</option>
+            </select>
         <div className="forms">
           <button className="mainButton" onClick={this.handleSubmit}>
-            <Link to="/info">Submit Form</Link>
+            Submit Form
           </button>
         </div>
         </form>

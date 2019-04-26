@@ -7,24 +7,32 @@ const InfoPage = () => (
     <div className='loginForm'>
      <h2>SELECT FORM</h2>
      <div className="forms">
-      <button className="mainButton">
-       <Link to="/damageform">DAMAGE NOTATION</Link>
-      </button>
+      <Link to="/damageform">
+        <button className="mainButton">
+          DAMAGE NOTATION
+        </button>
+      </Link>
       {/* <div className='formStatusComplete'>Complete</div> */}
         <br />
-      <button className="mainButton">
-       <Link to="/damageform">PRE-PURCHASE</Link>
-      </button>
+      <Link to="/damageform">
+        <button className="mainButton">
+          PRE-PURCHASE
+        </button>
+      </Link>
       {/* <div className='formStatusComplete'>Complete</div> */}
         <br />
-      <button className="mainButton">
-       <Link to="/damageform">DIAGNOSTIC SUMMARY</Link>
-      </button>
+      <Link to="/damageform">
+        <button className="mainButton">
+          DIAGNOSTIC SUMMARY
+        </button>
+      </Link>
       {/* <div className='formStatusProgress'>In Progress</div> */}
         <br />
-      <button className="mainButton">
-        <Link to="/checkout">CHECKOUT CHECKLIST</Link>
-      </button>
+      <Link to="/checkout">
+        <button className="mainButton">
+          CHECKOUT CHECKLIST
+        </button>
+      </Link>
         <br />
         <br />
         <br />

@@ -64,7 +64,7 @@ handleSubmit = (event) => {
       codes:'',
     },
   })
-  this.props.history.push('/damageform')
+  this.props.history.push('/info')
 }
 
 
@@ -74,7 +74,7 @@ render() {
   <div className='loginForm'>
     <div className="forms">
         <div className='logo'>
-        <img src="logo.svg" alt="LIFT LOGO" />
+        <img src="logo.svg"  alt="LIFT LOGO" />
         </div>
         </div>
         <br />

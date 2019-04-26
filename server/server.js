@@ -11,6 +11,7 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
 const formRouter = require('./routes/form.router');
+const checkoutRouter = require('./routes/checkout.router');
 const carRouter = require('./routes/car.router')
 // const formRouter = require('./routes/form.router');
 
@@ -29,6 +30,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/form', formRouter);
 app.use('/api/car', carRouter);
+app.use('/api/checkout', checkoutRouter)
 // app.use('/api/shelf', shelfRouter);
 
 // Serve static files

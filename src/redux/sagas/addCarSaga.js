@@ -1,7 +1,7 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* addItemSaga(action) {
+function* addCarSaga(action) {
     console.log('in addCarSaga');
     try{
         yield axios.post('/api/car', action.payload);
@@ -13,8 +13,8 @@ function* addItemSaga(action) {
     }
 }
 
-function* addFormSaga() {
-    yield takeLatest('ADD_CAR', addItemSaga);
+function* addCar() {
+    yield takeLatest('ADD_CAR', addCarSaga);
   }
 
-  export default addFormSaga;
+  export default addCar;
