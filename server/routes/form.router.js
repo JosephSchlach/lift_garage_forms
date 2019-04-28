@@ -5,19 +5,19 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
- const sqlText = `SELECT "damage_notation"."id" AS "damage_form", "damage_notation"."description",
-    "damage_notation"."fixable", "damage_notation"."status","damage_notation"."user_id", "user"."username" FROM "damage_notation"
-    JOIN "user" ON "user"."id" = "damage_notation"."user_id";`;
+// router.get('/', (req, res) => {
+//  const sqlText = `SELECT "damage_notation"."id" AS "damage_form", "damage_notation"."description",
+//     "damage_notation"."fixable", "damage_notation"."status","damage_notation"."user_id", "user"."username" FROM "damage_notation"
+//     JOIN "user" ON "user"."id" = "damage_notation"."user_id";`;
 
-pool.query(sqlText)
-    .then(response => {
-        res.send(response.rows);
-    })
-    .catch(error => {
-        console.log('Something went wrong getting forms', error);
-    });
-});
+// pool.query(sqlText)
+//     .then(response => {
+//         res.send(response.rows);
+//     })
+//     .catch(error => {
+//         console.log('Something went wrong getting forms', error);
+//     });
+// });
 
 /**
  * POST route template

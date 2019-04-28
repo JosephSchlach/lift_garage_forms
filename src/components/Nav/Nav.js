@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-{/* <FontAwesomeIcon icon='warehouse' spin /> */}
 
 const Nav = (props) => (
   <div className="nav">

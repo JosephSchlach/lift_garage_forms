@@ -21,7 +21,7 @@ const InfoPage = () => (
       </Link>
       {/* <div className='formStatusComplete'>Complete</div> */}
         <br />
-      <Link to="/damageform">
+      <Link to="/diagsummary">
         <button className="mainButton">
           DIAGNOSTIC SUMMARY
         </button>

@@ -14,6 +14,8 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 import DamageNotation from '../DamageNotation/DamageNotation';
+import DiagSummary from '../DiagSummary/DiagSummary';
+import PrePurchase from '../PrePurchase/PrePurchase';
 import CheckOut from '../CheckOut/CheckOut';
 import VinSearch from '../VinSearch/VinSearch';
 import SelectForm from '../SelectForm/SelectForm';
@@ -41,16 +43,7 @@ class App extends Component {
             Visiting localhost:3000/home will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
-            <ProtectedRoute
-              exact
-              path="/damageform"
-              component={DamageNotation}
-            />
-             <ProtectedRoute
-              exact
-              path="/checkout"
-              component={CheckOut}
-            />
+
             <ProtectedRoute
               exact
               path="/home"
@@ -62,6 +55,31 @@ class App extends Component {
               path="/table"
               component={CarTable}
             />
+
+            <ProtectedRoute
+              exact
+              path="/damageform"
+              component={DamageNotation}
+            />
+
+            <ProtectedRoute
+              exact
+              path="/diagsummary"
+              component={DiagSummary}
+            />
+
+            <ProtectedRoute
+              exact
+              path="/prepurchase"
+              component={PrePurchase}
+            />
+
+             <ProtectedRoute
+              exact
+              path="/checkout"
+              component={CheckOut}
+            />
+
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
             <ProtectedRoute

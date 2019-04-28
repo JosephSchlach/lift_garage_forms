@@ -187,13 +187,13 @@ render() {
                    onChange={this.handleChangeFor('misc_notes')}
                    value={this.state.newItem.misc_notes}></input>
               <br />
-            <label>Form status:</label>
+              <label>Is this form complete:</label>
               <br />
             <select value={this.state.newItem.status}
                     onChange={this.handleChangeFor('status')}>
                 <option></option>
-                <option value="in_progress">In Progress</option>
                 <option value="complete">Complete</option>
+                <option value="in_progress">In Progress</option>
             </select>
               <br />
               <br />

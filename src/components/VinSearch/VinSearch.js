@@ -64,7 +64,7 @@ handleSubmit = (event) => {
       codes:'',
     },
   })
-  this.props.history.push('/info')
+  this.props.history.push('/damageform')
 }
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
 
@@ -202,13 +202,13 @@ render() {
                 <option value="no">No Done</option>
             </select>
               <br />
-            <label>Status:</label>
+              <label>Is this form complete:</label>
               <br />
             <select value={this.state.newCheckout.status}
                     onChange={this.handleChangeFor('status')}>
                 <option></option>
-                <option value="in_progress">In Progress</option>
                 <option value="complete">Complete</option>
+                <option value="in_progress">In Progress</option>
             </select>
         <div className="forms">
           <button className="mainButton" onClick={this.handleSubmit}>
