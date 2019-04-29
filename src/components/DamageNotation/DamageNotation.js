@@ -2,9 +2,21 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 // import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
+const styles = theme => ({
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 150,
+    borderRadius: 4,
+  },
+});
 
 class DamageNotation extends Component {
+
 
 state ={
     newItem:{
@@ -63,6 +75,7 @@ handleSubmit = (event) => {
 // Renders the entire app on the DOM
 render() {
  console.log(this.state.newItem)
+ const { classes } = this.props;
   return (
     <section className='inputForm'>
       <div className='frontForm'>
@@ -95,11 +108,23 @@ render() {
             </div>
             </div>
         <form>
-            <label>Date:</label>
+          <br />
+        <div className="forms">
+          <label>Date:</label>
               <br />
-            <input type="text" name="date"
-                   onChange={this.handleChangeFor('date')}
-                   value={this.state.newItem.date}></input>
+          <TextField
+            id="date"
+            style={{backgroundColor: 'white'}}
+            // label="Form start date"
+            onChange={this.handleChangeFor('date')}
+            value={this.state.newItem.date}
+            type="date"
+            defaultValue="2019-01-01"
+            className={classes.textField}
+            InputLabelProps={{
+            shrink: true,
+        }}/>
+        </div>
               <br />
             <label>ABS:</label>
               <br />
@@ -211,9 +236,12 @@ render() {
  }
 }
 
+DamageNotation.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 const mapReduxStateToProps = (reduxState) => ({
     reduxState,
 })
 
-export default connect(mapReduxStateToProps)(withRouter(DamageNotation));
+export default withRouter(connect(mapReduxStateToProps)(withStyles(styles)(DamageNotation)));

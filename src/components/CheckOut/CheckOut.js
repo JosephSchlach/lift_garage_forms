@@ -2,7 +2,18 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 // import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
+const styles = theme => ({
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 150,
+    borderRadius: 4,
+  },
+});
 
 class CheckOut extends Component {
 
@@ -67,6 +78,7 @@ this.props.history.push('/info')
 // Renders the entire app on the DOM
 render() {
  console.log(this.state.newCheckout)
+ const { classes } = this.props;
   return (
     <section className='inputForm'>
       <div className='frontForm'>
@@ -100,11 +112,23 @@ render() {
             </div>
 
         <form>
-            <label>Date:</label>
               <br />
-            <input type="text" name="date"
-                   onChange={this.handleChangeFor('date')}
-                   value={this.state.newCheckout.date}></input>
+              <div className="forms">
+              <label>Date:</label>
+                    <br />
+                <TextField
+                  id="date"
+                  style={{backgroundColor: 'white'}}
+                  // label="Form start date"
+                  onChange={this.handleChangeFor('date')}
+                  value={this.state.newCheckout.date}
+                  type="date"
+                  defaultValue="2019-01-01"
+                  className={classes.textField}
+                  InputLabelProps={{
+                  shrink: true,
+              }}/>
+              </div>
               <br />
             <label>Damage Notation completed and turned into front office:</label>
               <br />
@@ -223,9 +247,13 @@ render() {
  }
 }
 
+CheckOut.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
 
 const mapReduxStateToProps = (reduxState) => ({
     reduxState,
 })
 
-export default connect(mapReduxStateToProps)(withRouter(CheckOut));
+export default withRouter(connect(mapReduxStateToProps)(withStyles(styles)(CheckOut)));

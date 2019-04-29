@@ -16,6 +16,7 @@ const prepurchaseRouter = require('./routes/prepurchase.router');
 const vinRouter = require('./routes/vin.router')
 const checkoutRouter = require('./routes/checkout.router');
 const carRouter = require('./routes/car.router')
+const addJobRouter = require('./routes/job.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -35,7 +36,8 @@ app.use('/api/diag', diagRouter);
 app.use('/api/prepurchase', prepurchaseRouter);
 app.use('/api/vin', vinRouter)
 app.use('/api/car', carRouter);
-app.use('/api/checkout', checkoutRouter)
+app.use('/api/checkout', checkoutRouter);
+app.use('/api/job', addJobRouter);
 // app.use('/api/shelf', shelfRouter);
 
 // Serve static files

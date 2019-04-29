@@ -8,7 +8,7 @@ router.get('/:vin', (req, res) => {
     const sqlText = `SELECT * FROM "vehicle" WHERE "vehicle"."vin" = $1`;
      pool.query(sqlText, [vin])
        .then(response => {
-           res.send(response.rows);
+           res.send(response.rows[0]);
        })
        .catch(error => {
            console.log('Something went wrong getting vehicle', error);

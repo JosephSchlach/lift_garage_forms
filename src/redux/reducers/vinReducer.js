@@ -1,7 +1,7 @@
-const vinReducer = (state = [], action) => {
+const vinReducer = (state = {}, action) => {
     switch (action.type) {
       case 'SET_VIN':
-        return action.payload;
+        return {...action.payload};
       default:
         return state;
     }

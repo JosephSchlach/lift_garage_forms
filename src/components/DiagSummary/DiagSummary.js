@@ -3,7 +3,18 @@ import {connect} from 'react-redux';
 // import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import './DiagSummary.css'
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
+const styles = theme => ({
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 150,
+    borderRadius: 4,
+  },
+});
 
 class DiagSummary extends Component {
 
@@ -52,6 +63,7 @@ this.props.history.push('/info')
 // Renders the entire app on the DOM
 render() {
  console.log(this.state.newDiag)
+ const { classes } = this.props;
   return (
     <section className='inputForm'>
       <div className='frontForm'>
@@ -84,11 +96,23 @@ render() {
             </div>
             </div>
         <form>
-            <label>Date:</label>
               <br />
-            <input type="text" name="date"
-                   onChange={this.handleChangeFor('date')}
-                   value={this.state.newDiag.date}></input>
+              <div className="forms">
+          <label>Date:</label>
+              <br />
+          <TextField
+            id="date"
+            style={{backgroundColor: 'white'}}
+            // label="Form start date"
+            onChange={this.handleChangeFor('date')}
+            value={this.state.newDiag.date}
+            type="date"
+            defaultValue="2019-01-01"
+            className={classes.textField}
+            InputLabelProps={{
+            shrink: true,
+        }}/>
+            </div>
               <br />
             <label>Description of problem:</label>
               <br />
@@ -138,9 +162,12 @@ render() {
  }
 }
 
+DiagSummary.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 const mapReduxStateToProps = (reduxState) => ({
     reduxState,
 })
 
-export default connect(mapReduxStateToProps)(withRouter(DiagSummary));
+export default withRouter(connect(mapReduxStateToProps)(withStyles(styles)(DiagSummary)));

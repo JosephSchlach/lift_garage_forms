@@ -7,7 +7,18 @@ import './CarTable.css';
 class CarTable extends Component {
 
 componentDidMount = () => {
-  // this.props.dispatch({type: 'SET_VIN'})
+  // this.props.dispatch({type: 'GET_VIN'})
+  
+}
+
+newJob = (event) => {
+console.log('redux state vin id', this.props.reduxState.vin.id);
+console.log('redux state vin license', this.props.reduxState.vin.license_plate);
+//  let newJob ={
+//    vehicle_id: this.props.reduxState.vin.id
+//  }
+ this.props.dispatch({ type: 'ADD_JOB', payload:this.props.reduxState.vin.id})
+ this.props.history.push(`/damageform?id=${event.currentTarget.value}`)
 }
 
 render() {
@@ -33,14 +44,32 @@ render() {
               </tr>
             </thead>
             <tbody>
-            {this.props.reduxState.vin.map(carinfo => {
+            {/* {this.props.reduxState.vin.map(carinfo => {
               return (
                 <tr>
                   <td className='tData'>{carinfo.id}</td>
                   <td className='tData'>{carinfo.customer_name}</td>
                   <td className='tData'>{carinfo.license_plate}</td>
                   <td className='tData'>{carinfo.id}</td>
+                  <td>
+                  <button className="mainButton" value={carinfo.id} onClick={this.newJob}>
+            NEW JOB
+        </button>
+                  </td>
+                </tr> */}
+
+                  <tr>
+                  <td className='tData'></td>
+                  <td className='tData'>{this.props.reduxState.vin.customer_name}</td>
+                  <td className='tData'>{this.props.reduxState.vin.license_plate}</td>
+                  <td className='tData'></td>
+                  <td>
+                  <button className="mainButton" value={this.props.reduxState.vin.id} onClick={this.newJob}>
+            NEW JOB
+                 </button>
+                  </td>
                 </tr>
+                
               )
             })
           }
@@ -48,9 +77,9 @@ render() {
             </tbody>
         </table>
         <div className="forms">
-        <button className="mainButton">
-            <Link to="/damageform">NEW JOB</Link>
-        </button>
+        {/* <button className="mainButton" onClick={this.newJob}>
+            NEW JOB
+        </button> */}
         </div>
     </div>
 </section>

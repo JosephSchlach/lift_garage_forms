@@ -18,4 +18,23 @@ router.post('/', (req, res) => {
     });
     });
 
+    router.post('/job', (req, res) => {
+        let job = req.body
+        console.log( job );
+        const sqlText = `INSERT INTO "job_id" ("vehicle_id", "tech_id") VALUES ($1, $2);`;
+        pool.query(sqlText,
+        [ job.vehicle_id, req.user.id ]
+        )
+        .then((result) => {
+            res.sendStatus(201);
+        })
+        .catch((error) => {
+            console.log(`ERROR in POST`, error);
+            res.sendStatus(500);
+        });
+        });
+    
+
+
+
     module.exports = router;

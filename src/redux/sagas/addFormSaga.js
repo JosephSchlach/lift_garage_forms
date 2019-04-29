@@ -5,7 +5,7 @@ function* addFormSaga(action) {
     console.log('in addFormSaga');
     try{
         yield axios.post('/api/form', action.payload);
-        yield put({type: 'GET_FORM'});
+        // yield put({type: 'GET_FORM'});
     }
     catch (error) {
         console.log('ERROR IN POST', error);
