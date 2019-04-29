@@ -2,19 +2,6 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-
-router.get('/', (req, res) => {
-    const sqlText = `SELECT * FROM "vehicle" WHERE "vin" = '213456';`;
-     pool.query(sqlText)
-       .then(response => {
-           res.send(response.rows);
-       })
-       .catch(error => {
-           console.log('Something went wrong getting vehicle', error);
-       });
-   });
-
-
 router.post('/', (req, res) => {
     let vehicle = req.body
     console.log( vehicle );

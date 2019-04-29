@@ -6,7 +6,7 @@ import addFormSaga from './addFormSaga';
 import addCheckoutSaga from './addCheckoutSaga';
 import addPrePurchaseSaga from './addPrePurchaseSaga';
 import addDiagSaga from './addDiagSaga';
-import addCarSaga from './addCarSaga';
+import addVinSaga from './getVinSaga';
 import getSaga from './getSaga';
 
 // rootSaga is the primary saga.
@@ -25,7 +25,7 @@ export default function* rootSaga() {
     addPrePurchaseSaga(),
     addDiagSaga(),
     addCheckoutSaga(),
-    addCarSaga(),
+    addVinSaga(),
     getSaga(),
   ]);
 }

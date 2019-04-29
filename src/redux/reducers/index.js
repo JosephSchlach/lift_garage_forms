@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import car from './carReducer';
+import vin from './vinReducer';
 import checkout from './checkoutReducer';
 import diag from './diagReducer';
 import errors from './errorsReducer';
@@ -14,7 +14,7 @@ import user from './userReducer';
 // Lets make a bigger object for our store, with the objects from our reducers.
 // This is what we get when we use 'state' inside of 'mapStateToProps'
 const rootReducer = combineReducers({
-  car,
+  vin,
   checkout,
   diag,
   errors, // contains registrationMessage and loginMessage

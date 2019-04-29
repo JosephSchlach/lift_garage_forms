@@ -1,10 +1,10 @@
-const carReducer = (state = [], action) => {
+const vinReducer = (state = [], action) => {
     switch (action.type) {
-      case 'SET_CAR':
+      case 'SET_VIN':
         return action.payload;
       default:
         return state;
     }
   };
 
-export default carReducer;
+export default vinReducer;

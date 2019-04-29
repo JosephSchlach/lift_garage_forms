@@ -6,6 +6,10 @@ import './CarTable.css';
 
 class CarTable extends Component {
 
+componentDidMount = () => {
+  // this.props.dispatch({type: 'SET_VIN'})
+}
+
 render() {
   return (
 <section className='inputForm'>
@@ -18,7 +22,7 @@ render() {
         <br />
         <br />
           <h3>PREVIOUS VISITS</h3>
-            <br />
+          {JSON.stringify(this.props.reduxState.vin)}
          <table>
             <thead>
               <tr>
@@ -27,41 +31,20 @@ render() {
                 <th className='tHead'>Plates</th>
                 <th className='tHead'>Status</th>
               </tr>
-              <tr>
-                <td className='tData'>1-1-19</td>
-                <td className='tData'>Name</td>
-                <td className='tData'>Plates</td>
-                <td className='tData'>Complete</td>
-              </tr>
-              <tr>
-                <td className='tData'>6-5-18</td>
-                <td className='tData'>Name</td>
-                <td className='tData'>Plates</td>
-                <td className='tData'>Complete</td>
-              </tr>
-              <tr>
-                <td className='tData'>5-26-18</td>
-                <td className='tData'>Name</td>
-                <td className='tData'>Plates</td>
-                <td className='tData'>Complete</td>
-              </tr>
-              <tr>
-                <td className='tData'>7-19-17</td>
-                <td className='tData'>Name</td>
-                <td className='tData'>Plates</td>
-                <td className='tData'>Complete</td>
-              </tr>
             </thead>
             <tbody>
-            {/* {this.props.reduxState.getFeedback.map(feedback => {
-            return (
-                <AdminListItem
-                feedback={feedback}
-                deleteFeedback={this.props.deleteFeedback}
-                flagFeedback={this.props.flagFeedback}
-                key={feedback.id}
-                />
-                ) */}
+            {this.props.reduxState.vin.map(carinfo => {
+              return (
+                <tr>
+                  <td className='tData'>{carinfo.id}</td>
+                  <td className='tData'>{carinfo.customer_name}</td>
+                  <td className='tData'>{carinfo.license_plate}</td>
+                  <td className='tData'>{carinfo.id}</td>
+                </tr>
+              )
+            })
+          }
+
             </tbody>
         </table>
         <div className="forms">
@@ -69,7 +52,7 @@ render() {
             <Link to="/damageform">NEW JOB</Link>
         </button>
         </div>
-    </div>=
+    </div>
 </section>
 );
 }
@@ -80,3 +63,4 @@ const mapReduxStateToProps = (reduxState) => ({
 })
 
 export default connect(mapReduxStateToProps)(withRouter(CarTable));
+// className='tData'>

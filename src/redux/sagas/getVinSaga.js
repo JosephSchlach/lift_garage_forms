@@ -1,12 +1,13 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* getCarSaga(action) {
-    console.log('in getCarSaga');
+function* getVinSaga(action) {
+    console.log('in getVinSaga');
+    let vin = action.payload;
     try{
-       const response = yield axios.get('/api/car');
+       const response = yield axios.get(`/api/vin/${vin}`);
        console.log(response.data)
-        yield put({type: 'SET_CAR', payload: response.data});
+        yield put({type: 'SET_VIN', payload: response.data});
     }
     catch (error) {
         console.log('ERROR IN GET', error);
@@ -16,7 +17,7 @@ function* getCarSaga(action) {
 
 
 function* getSaga() {
-    yield takeLatest('GET_CAR', getCarSaga);
+    yield takeLatest('GET_VIN', getVinSaga);
 }
 
   export default getSaga;
