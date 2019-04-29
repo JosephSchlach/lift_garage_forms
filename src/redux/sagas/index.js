@@ -4,6 +4,8 @@ import registrationSaga from './registrationSaga';
 import userSaga from './userSaga';
 import addFormSaga from './addFormSaga';
 import addCheckoutSaga from './addCheckoutSaga';
+import addPrePurchaseSaga from './addPrePurchaseSaga';
+import addDiagSaga from './addDiagSaga';
 import addCarSaga from './addCarSaga';
 import getSaga from './getSaga';
 
@@ -20,6 +22,8 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     addFormSaga(),
+    addPrePurchaseSaga(),
+    addDiagSaga(),
     addCheckoutSaga(),
     addCarSaga(),
     getSaga(),

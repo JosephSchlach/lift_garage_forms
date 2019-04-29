@@ -12,6 +12,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const formRouter = require('./routes/form.router');
 const diagRouter = require('./routes/diag.router');
+const prepurchaseRouter = require('./routes/prepurchase.router');
 const checkoutRouter = require('./routes/checkout.router');
 const carRouter = require('./routes/car.router')
 
@@ -30,6 +31,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/form', formRouter);
 app.use('/api/diag', diagRouter);
+app.use('/api/prepurchase', prepurchaseRouter);
 app.use('/api/car', carRouter);
 app.use('/api/checkout', checkoutRouter)
 // app.use('/api/shelf', shelfRouter);

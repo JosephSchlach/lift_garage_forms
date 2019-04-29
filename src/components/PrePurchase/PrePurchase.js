@@ -9,7 +9,9 @@ class PrePurchase extends Component {
 state ={
   newPrePurchase:{
         date: '',
-     
+        mileage: '',
+        urgent_repairs: '',
+        repairs_that_can_wait: '',
         status: '',
         user_id: this.props.reduxState.user.id,
         // job_id: this.props.reduxState.job.id,
@@ -34,18 +36,9 @@ handleSubmit = (event) => {
   this.setState({
       newPrePurchase:{
         date: '',
-        inspection_complete: '',
-        fluid_levels: '',
-        tires_torqued: '',
-        torque_spec: '',
-        hubcap_repaced: '',
-        lugnut_socket: '',
-        engine_cover: '',
-        final_mileage: '',
-        final_walkaround: '',
-        unnecessary_parts: '',
-        test_drive_notes: '',
-        ready_for_customer: '',
+        mileage: '',
+        urgent_repairs: '',
+        repairs_that_can_wait: '',
         status: '',
     },
   })
@@ -92,12 +85,29 @@ render() {
               <br />
             <input type="text" name="date"
                    onChange={this.handleChangeFor('date')}
-                   value={this.state.newCheckout.date}></input>
+                   value={this.state.newPrePurchase.date}></input>
               <br />
-           
+              <label>Mileage:</label>
+              <br />
+            <input type="text" name="mileage"
+                   onChange={this.handleChangeFor('mileage')}
+                   value={this.state.newPrePurchase.mileage}></input>
+              <br />
+              <label>Urgent repairs (safety and drivability):</label>
+              <br />
+            <input className='bigbox' type="text" name="urgent_repairs"
+                   onChange={this.handleChangeFor('urgent_repairs')}
+                   value={this.state.newPrePurchase.urgent_repairs}></input>
+              <br />
+              <label>Repairs that can wait:</label>
+              <br />
+            <input className='bigbox' type="text" name="repairs_that_can_wait"
+                   onChange={this.handleChangeFor('repairs_that_can_wait')}
+                   value={this.state.newPrePurchase.repairs_that_can_wait}></input>
+              <br />
               <label>Is this form complete:</label>
               <br />
-            <select value={this.state.newCheckout.status}
+            <select value={this.state.newPrePurchase.status}
                     onChange={this.handleChangeFor('status')}>
                 <option></option>
                 <option value="complete">Complete</option>

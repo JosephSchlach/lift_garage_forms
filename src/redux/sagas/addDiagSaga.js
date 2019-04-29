@@ -9,7 +9,7 @@ function* addDiag(action) {
     }
     catch (error) {
         console.log('ERROR IN POST', error);
-        alert(`Sorry! Unable to add item. Try again later.`)
+        alert(`Sorry! Unable to add diag. Try again later.`)
     }
 }
 

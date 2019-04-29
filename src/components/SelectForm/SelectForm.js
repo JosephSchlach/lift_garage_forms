@@ -14,7 +14,7 @@ const InfoPage = () => (
       </Link>
       {/* <div className='formStatusComplete'>Complete</div> */}
         <br />
-      <Link to="/damageform">
+      <Link to="/prepurchase">
         <button className="mainButton">
           PRE-PURCHASE
         </button>
