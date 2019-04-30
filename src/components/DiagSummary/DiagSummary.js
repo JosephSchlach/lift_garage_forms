@@ -9,8 +9,8 @@ import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
   textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
+    // marginLeft: theme.spacing.unit,
+    // marginRight: theme.spacing.unit,
     width: 150,
     borderRadius: 4,
   },
@@ -67,32 +67,29 @@ render() {
   return (
     <section className='inputForm'>
       <div className='frontForm'>
-      <h2>DAMAGE NOTATION FORM</h2>
-
+      <h2>DIAGNOSTIC SUMMARY</h2>
             <div className='newVehicle'>
             <div className='NewVRow1'>
                 <label>Customer:</label>
                   <br />
-                <input type="text" name="customer_name"></input>
-                  <br />
+                  <div className="fauxinput"><p>{this.props.reduxState.vin.customer_name}</p></div>
                 <label>Make:</label>
                   <br />
-                <input ></input>
-                  <br />
+                  <div className="fauxinput">{this.props.reduxState.vin.make}</div>
                 <label>Year:</label>
                   <br />
-                <input type="text" name="year"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.year}</div>
             </div>
             <div className='NewVRow2'>
                 <label>VIN:</label>
                   <br />
-                <input type="text" name="vin"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.vin}</div>
                 <label>Model:</label>
                   <br />
-                <input type="text" name="model"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.model}</div>
                 <label>License Plate:</label>
                   <br />
-                <input type="text" name="license_plate"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.license_plate}</div>
             </div>
             </div>
         <form>
@@ -114,6 +111,7 @@ render() {
         }}/>
             </div>
               <br />
+            <div className='newDamage'>
             <label>Description of problem:</label>
               <br />
             <input className='smallbox' type="text" name="problem"
@@ -137,8 +135,10 @@ render() {
             <input className='smallbox' type="text" name="findings"
                    onChange={this.handleChangeFor('findings')}
                    value={this.state.newDiag.findings}></input>
+              </div>
               <br />
-            <label>Is this form complete:</label>
+              <div className="forms">
+            <label>Form complete:</label>
               <br />
             <select value={this.state.newDiag.status}
                     onChange={this.handleChangeFor('status')}>
@@ -146,16 +146,13 @@ render() {
                 <option value="complete">Complete</option>
                 <option value="in_progress">In Progress</option>
             </select>
-              <br />
-              <br />
-              <br />
+            </div>
         <div className="forms">
           <button className="mainButton" onClick={this.handleSubmit}>
             Submit Form
           </button>
         </div>
         </form>
-      <pre>{JSON.stringify(this.state)}</pre>
       </div>
     </section>
   )

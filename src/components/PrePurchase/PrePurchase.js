@@ -8,8 +8,8 @@ import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
   textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
+    // marginLeft: theme.spacing.unit,
+    // marginRight: theme.spacing.unit,
     width: 150,
     borderRadius: 4,
   },
@@ -70,29 +70,26 @@ render() {
             <div className='NewVRow1'>
                 <label>Customer:</label>
                   <br />
-                <input type="text" name="customer_name"></input>
-                  <br />
+                  <div className="fauxinput"><p>{this.props.reduxState.vin.customer_name}</p></div>
                 <label>Make:</label>
                   <br />
-                <input ></input>
-                  <br />
+                  <div className="fauxinput">{this.props.reduxState.vin.make}</div>
                 <label>Year:</label>
                   <br />
-                <input type="text" name="year"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.year}</div>
             </div>
             <div className='NewVRow2'>
                 <label>VIN:</label>
                   <br />
-                <input type="text" name="vin"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.vin}</div>
                 <label>Model:</label>
                   <br />
-                <input type="text" name="model"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.model}</div>
                 <label>License Plate:</label>
                   <br />
-                <input type="text" name="license_plate"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.license_plate}</div>
             </div>
             </div>
-
         <form>
               <br />
             <div className="forms">
@@ -110,15 +107,18 @@ render() {
               InputLabelProps={{
               shrink: true,
               }}/>
-          </div>
+            </div>
               <br />
-              <label>Mileage:</label>
+              <div className="forms">
+            <label>Mileage:</label>
               <br />
             <input type="text" name="mileage"
                    onChange={this.handleChangeFor('mileage')}
                    value={this.state.newPrePurchase.mileage}></input>
+              </div>
               <br />
-              <label>Urgent repairs (safety and drivability):</label>
+              <div className='newDamage'>
+            <label>Urgent repairs (safety and drivability):</label>
               <br />
             <input className='bigbox' type="text" name="urgent_repairs"
                    onChange={this.handleChangeFor('urgent_repairs')}
@@ -129,8 +129,10 @@ render() {
             <input className='bigbox' type="text" name="repairs_that_can_wait"
                    onChange={this.handleChangeFor('repairs_that_can_wait')}
                    value={this.state.newPrePurchase.repairs_that_can_wait}></input>
+              </div>
               <br />
-              <label>Is this form complete:</label>
+              <div className="forms">
+              <label>Form complete:</label>
               <br />
             <select value={this.state.newPrePurchase.status}
                     onChange={this.handleChangeFor('status')}>
@@ -138,13 +140,13 @@ render() {
                 <option value="complete">Complete</option>
                 <option value="in_progress">In Progress</option>
             </select>
+            </div>
         <div className="forms">
           <button className="mainButton" onClick={this.handleSubmit}>
             Submit Form
           </button>
         </div>
         </form>
-      <pre>{JSON.stringify(this.state)}</pre>
       </div>
     </section>
   )

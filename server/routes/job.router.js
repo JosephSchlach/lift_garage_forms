@@ -6,7 +6,7 @@ router.post('/', (req, res) => {
     let user_id = req.user.id
     console.log(req.body.vinId)
     console.log(user_id)
-    
+
     const sqlText = `INSERT INTO "job" ("user_id", "vehicle_id") VALUES ($1, $2);`;
     pool.query(sqlText,
     [ user_id, req.body.vinId])

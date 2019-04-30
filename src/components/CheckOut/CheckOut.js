@@ -83,54 +83,51 @@ render() {
     <section className='inputForm'>
       <div className='frontForm'>
         <h2>MANDATORY SAFETY AND EQUPIMENT CHECKLIST</h2>
-
             <div className='newVehicle'>
             <div className='NewVRow1'>
                 <label>Customer:</label>
                   <br />
-                <input type="text" name="customer_name"></input>
-                  <br />
+                  <div className="fauxinput"><p>{this.props.reduxState.vin.customer_name}</p></div>
                 <label>Make:</label>
                   <br />
-                <input ></input>
-                  <br />
+                  <div className="fauxinput">{this.props.reduxState.vin.make}</div>
                 <label>Year:</label>
                   <br />
-                <input type="text" name="year"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.year}</div>
             </div>
             <div className='NewVRow2'>
                 <label>VIN:</label>
                   <br />
-                <input type="text" name="vin"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.vin}</div>
                 <label>Model:</label>
                   <br />
-                <input type="text" name="model"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.model}</div>
                 <label>License Plate:</label>
                   <br />
-                <input type="text" name="license_plate"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.license_plate}</div>
             </div>
             </div>
-
-        <form>
+         <form>
               <br />
-              <div className="forms">
-              <label>Date:</label>
-                    <br />
-                <TextField
-                  id="date"
-                  style={{backgroundColor: 'white'}}
-                  // label="Form start date"
-                  onChange={this.handleChangeFor('date')}
-                  value={this.state.newCheckout.date}
-                  type="date"
-                  defaultValue="2019-01-01"
-                  className={classes.textField}
-                  InputLabelProps={{
-                  shrink: true,
+            <div className="forms">
+            <label>Date:</label>
+                  <br />
+              <TextField
+                id="date"
+                style={{backgroundColor: 'white'}}
+                // label="Form start date"
+                onChange={this.handleChangeFor('date')}
+                value={this.state.newCheckout.date}
+                type="date"
+                defaultValue="2019-01-01"
+                className={classes.textField}
+                InputLabelProps={{
+                shrink: true,
               }}/>
-              </div>
+            </div>
               <br />
-            <label>Damage Notation completed and turned into front office:</label>
+            <div className='newDamage'>
+            <label>Damage Notation completed and turned in:</label>
               <br />
             <select value={this.state.newCheckout.inspection_complete}
                     onChange={this.handleChangeFor('inspection_complete')}>
@@ -139,7 +136,7 @@ render() {
                 <option value="not_done">Not Done</option>
             </select>
               <br />
-            <label>Fluid levels checked and low levels noted to Service Writers:</label>
+            <label>Fluid levels checked and low levels noted:</label>
               <br />
             <select value={this.state.newCheckout.fluid_levels}
                     onChange={this.handleChangeFor('fluid_levels')}>
@@ -205,7 +202,7 @@ render() {
                 <option value="not_done">Not Done</option>
             </select>
               <br />
-            <label>Any parts or quoted labor that were not needed:</label>
+            <label>Any parts that were not needed:</label>
               <br />
             <input type="text" name="date"
                    onChange={this.handleChangeFor('unnecessary_parts')}
@@ -225,8 +222,10 @@ render() {
                 <option value="yes">Yes</option>
                 <option value="no">No Done</option>
             </select>
-              <br />
-              <label>Is this form complete:</label>
+            </div>
+            <br />
+            <div className="forms">
+              <label>Form complete:</label>
               <br />
             <select value={this.state.newCheckout.status}
                     onChange={this.handleChangeFor('status')}>
@@ -234,13 +233,13 @@ render() {
                 <option value="complete">Complete</option>
                 <option value="in_progress">In Progress</option>
             </select>
+            </div>
         <div className="forms">
           <button className="mainButton" onClick={this.handleSubmit}>
             Submit Form
           </button>
         </div>
         </form>
-      <pre>{JSON.stringify(this.state)}</pre>
       </div>
     </section>
   )

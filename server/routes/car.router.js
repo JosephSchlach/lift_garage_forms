@@ -2,6 +2,21 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+
+// router.get('/', (req, res) => {
+//  const sqlText = `SELECT "damage_notation"."id" AS "damage_form", "damage_notation"."description",
+//     "damage_notation"."fixable", "damage_notation"."status","damage_notation"."user_id", "user"."username" FROM "damage_notation"
+//     JOIN "user" ON "user"."id" = "damage_notation"."user_id";`;
+
+// pool.query(sqlText)
+//     .then(response => {
+//         res.send(response.rows);
+//     })
+//     .catch(error => {
+//         console.log('Something went wrong getting forms', error);
+//     });
+// });
+
 router.post('/', (req, res) => {
     let vehicle = req.body
     console.log( vehicle );
@@ -33,8 +48,5 @@ router.post('/', (req, res) => {
             res.sendStatus(500);
         });
         });
-    
-
-
 
     module.exports = router;

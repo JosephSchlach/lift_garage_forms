@@ -8,8 +8,8 @@ import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
   textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
+    // marginLeft: theme.spacing.unit,
+    // marginRight: theme.spacing.unit,
     width: 150,
     borderRadius: 4,
   },
@@ -17,6 +17,9 @@ const styles = theme => ({
 
 class DamageNotation extends Component {
 
+componentDidMount = () => {
+
+}
 
 state ={
     newItem:{
@@ -71,9 +74,9 @@ handleSubmit = (event) => {
   this.props.history.push('/info')
 }
 
-
 // Renders the entire app on the DOM
 render() {
+console.log(this.props)
  console.log(this.state.newItem)
  const { classes } = this.props;
   return (
@@ -85,29 +88,28 @@ render() {
             <div className='NewVRow1'>
                 <label>Customer:</label>
                   <br />
-                <input type="text" name="customer_name"></input>
-                  <br />
+                  <div className="fauxinput"><p>{this.props.reduxState.vin.customer_name}</p></div>
                 <label>Make:</label>
                   <br />
-                <input ></input>
-                  <br />
+                  <div className="fauxinput">{this.props.reduxState.vin.make}</div>
                 <label>Year:</label>
                   <br />
-                <input type="text" name="year"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.year}</div>
             </div>
             <div className='NewVRow2'>
                 <label>VIN:</label>
                   <br />
-                <input type="text" name="vin"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.vin}</div>
                 <label>Model:</label>
                   <br />
-                <input type="text" name="model"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.model}</div>
                 <label>License Plate:</label>
                   <br />
-                <input type="text" name="license_plate"></input>
+                  <div className="fauxinput">{this.props.reduxState.vin.license_plate}</div>
             </div>
             </div>
         <form>
+          <br />
           <br />
         <div className="forms">
           <label>Date:</label>
@@ -115,7 +117,6 @@ render() {
           <TextField
             id="date"
             style={{backgroundColor: 'white'}}
-            // label="Form start date"
             onChange={this.handleChangeFor('date')}
             value={this.state.newItem.date}
             type="date"
@@ -125,7 +126,8 @@ render() {
             shrink: true,
         }}/>
         </div>
-              <br />
+        <div className='newDamage'>
+          <div className='NewVRow1'>
             <label>ABS:</label>
               <br />
             <select value={this.state.newItem.abs}
@@ -173,7 +175,8 @@ render() {
                 <option value="50-75">50-75%</option>
                 <option value="75-100">75-100%</option>
             </select>
-              <br />
+          </div>
+          <div className='NewVRow2'>
             <label>Drivable:</label>
               <br />
             <select value={this.state.newItem.drivable}
@@ -206,30 +209,29 @@ render() {
                    onChange={this.handleChangeFor('vehicle_damage_notes')}
                    value={this.state.newItem.vehicle_damage_notes}></input>
               <br />
-            <label>Miscellaneous Notes:</label>
+            <label>Misc. Notes:</label>
               <br />
             <input type="text" name="misc_notes"
                    onChange={this.handleChangeFor('misc_notes')}
                    value={this.state.newItem.misc_notes}></input>
+                   </div>
+                   </div>
+                   <div className="forms">
+              <label>Form complete:</label>
               <br />
-              <label>Is this form complete:</label>
-              <br />
-            <select value={this.state.newItem.status}
+              <select value={this.state.newItem.status}
                     onChange={this.handleChangeFor('status')}>
                 <option></option>
                 <option value="complete">Complete</option>
                 <option value="in_progress">In Progress</option>
-            </select>
-              <br />
-              <br />
-              <br />
-        <div className="forms">
+              </select>
+              </div>
+          <div className="forms">
           <button className="mainButton" onClick={this.handleSubmit}>
            Submit Form
           </button>
         </div>
         </form>
-      <pre>{JSON.stringify(this.state)}</pre>
       </div>
     </section>
   )
