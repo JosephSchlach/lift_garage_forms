@@ -70,7 +70,7 @@ handleSubmit = (event) => {
         status: '',
     },
   })
-this.props.history.push('/info')
+this.props.history.push('/home')
 }
 
 

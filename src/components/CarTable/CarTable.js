@@ -34,6 +34,7 @@ state ={
   newJobName:{
         job_name: '',
         user_id: this.props.reduxState.user.id,
+        car_id: this.props.reduxState.vin.id,
     }
 }
 
@@ -56,6 +57,7 @@ handleSubmit = (event) => {
       newJobName:{
         job_name: '',
         user_id: this.props.reduxState.user.id,
+        car_id: this.props.reduxState.vin.id,
     },
   })
 // this.props.history.push('/damageform')

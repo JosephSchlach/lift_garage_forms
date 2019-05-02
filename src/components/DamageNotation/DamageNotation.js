@@ -90,7 +90,7 @@ console.log(this.props)
     <section className='inputForm'>
       <div className='frontForm'>
         <h2>DAMAGE NOTATION FORM</h2>
-        {JSON.stringify(this.state)}
+        {/* {JSON.stringify(this.state)} */}
           <br />
             <div className='newVehicle'>
             <div className='NewVRow1'>
