@@ -25,8 +25,7 @@ state ={
         urgent_repairs: '',
         repairs_that_can_wait: '',
         status: '',
-        user_id: this.props.reduxState.user.id,
-        // job_id: this.props.reduxState.job.id,
+        job_id: this.props.reduxState.currentJob.id,
     }
 }
 
@@ -54,7 +53,7 @@ handleSubmit = (event) => {
         status: '',
     },
   })
-this.props.history.push('/info')
+  this.props.history.push(`/info?id=${this.props.reduxState.currentJob.id}`)
 }
 
 

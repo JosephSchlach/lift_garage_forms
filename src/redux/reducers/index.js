@@ -6,6 +6,7 @@ import errors from './errorsReducer';
 import formReducer from './formReducer';
 import loginMode from './loginModeReducer';
 import user from './userReducer';
+import currentJob from './currentJobReducer'
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   formReducer,
   loginMode, // will have a value of 'login' or 'registration' to control which screen is shown
-  user, // will have an id and username if someone is logged in
+  user, 
+  currentJob,// will have an id and username if someone is logged in
 });
 
 export default rootReducer;

@@ -4,8 +4,11 @@ import axios from 'axios';
 function* addJobSaga(action) {
     console.log('in addJobSaga', action.payload);
     try{
-        const response = yield axios.post(`/api/job/`, {vinId: action.payload});
-
+        //RESPONSE IS RETURNING THE ID OF THE ROW THAT WE POSTED TO
+       const response = yield axios.post(`/api/job/`,  action.payload);
+       console.log(response.data);
+       
+yield put({type: "SET_JOBN", payload: response.data})
     }
     catch (error) {
         console.log('ERROR IN POST', error);
@@ -15,6 +18,7 @@ function* addJobSaga(action) {
 
 function* addJob() {
     yield takeLatest('ADD_JOB', addJobSaga);
+   
   }
 
   export default addJob;

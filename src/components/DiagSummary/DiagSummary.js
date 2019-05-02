@@ -26,8 +26,7 @@ class DiagSummary extends Component {
         diag_performed: '',
         findings: '',
         status: '',
-        user_id: this.props.reduxState.user.id,
-        // job_id: this.props.reduxState.job.id,
+        job_id: this.props.reduxState.currentJob.id,
     }
 }
 
@@ -56,7 +55,7 @@ handleSubmit = (event) => {
         status: '',
     },
   })
-this.props.history.push('/info')
+  this.props.history.push(`/info?id=${this.props.reduxState.currentJob.id}`)
 }
 
 

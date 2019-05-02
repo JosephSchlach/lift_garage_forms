@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import qs from 'query-string';
 
 const styles = theme => ({
   textField: {
@@ -18,7 +19,14 @@ const styles = theme => ({
 class DamageNotation extends Component {
 
 componentDidMount = () => {
-
+const searchObject = qs.parse(this.props.location.search)
+console.log(searchObject);
+this.setState({
+  newItem:  {
+    ...this.state.newItem,
+    job_id: searchObject.id,
+  }
+})
 }
 
 state ={
@@ -34,9 +42,8 @@ state ={
         dash_lights: '',
         vehicle_damage_notes: '',
         misc_notes: '',
-        complete: '',
-        user_id: this.props.reduxState.user.id,
-        // job_id: this.props.reduxState.job.id,
+        status: '',
+        job_id: this.props.reduxState.currentJob.id,
     }
 }
 
@@ -68,10 +75,10 @@ handleSubmit = (event) => {
         dash_lights: '',
         vehicle_damage_notes: '',
         misc_notes: '',
-        complete: '',
+        status: '',
     },
   })
-  this.props.history.push('/info')
+  this.props.history.push(`/info?id=${this.props.reduxState.currentJob.id}`)
 }
 
 // Renders the entire app on the DOM
@@ -83,6 +90,7 @@ console.log(this.props)
     <section className='inputForm'>
       <div className='frontForm'>
         <h2>DAMAGE NOTATION FORM</h2>
+        {JSON.stringify(this.state)}
           <br />
             <div className='newVehicle'>
             <div className='NewVRow1'>

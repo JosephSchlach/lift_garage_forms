@@ -33,8 +33,7 @@ state ={
         test_drive_notes: '',
         ready_for_customer: '',
         status: '',
-        user_id: this.props.reduxState.user.id,
-        // job_id: this.props.reduxState.job.id,
+        job_id: this.props.reduxState.currentJob.id,
     }
 }
 
