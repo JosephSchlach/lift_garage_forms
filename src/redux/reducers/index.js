@@ -21,7 +21,7 @@ const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   formReducer,
   loginMode, // will have a value of 'login' or 'registration' to control which screen is shown
-  user, 
+  user,
   currentJob,// will have an id and username if someone is logged in
 });
 

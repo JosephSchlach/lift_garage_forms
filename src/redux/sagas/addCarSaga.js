@@ -5,7 +5,7 @@ function* addCarSaga(action) {
     console.log('in addCarSaga');
     try{
         yield axios.post('/api/car', action.payload);
-        yield put({type: 'GET_CAR'});
+        // yield put({type: 'GET_CAR'});
     }
     catch (error) {
         console.log('ERROR IN POST', error);

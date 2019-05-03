@@ -19,8 +19,6 @@ const styles = theme => ({
 
 class CarTable extends Component {
 
-  
-
   //COMPONENT DID UPDATE WAITS FOR THE ID TO RETURN SO WE CAN PASS IT TO THE NEXT VIEW THROUGH THE URL. 
 componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
@@ -34,20 +32,21 @@ state ={
   newJobName:{
         job_name: '',
         user_id: this.props.reduxState.user.id,
-        car_id: this.props.reduxState.vin.id,
+        car_id: this.props.reduxState.vin.car_id,
     }
 }
 
-handleChangeFor = (propertyName) => {
-  return (event) => {
+handleChangeFor = propertyName => (event) => {
+  return (
     this.setState({
       newJobName:  {
         ...this.state.newJobName,
         [propertyName]: event.target.value,
       }
-  })
+    })
+  )
 }
-}
+
 
 handleSubmit = (event) => {
   event.preventDefault();
@@ -56,23 +55,13 @@ handleSubmit = (event) => {
   this.setState({
       newJobName:{
         job_name: '',
-        user_id: this.props.reduxState.user.id,
-        car_id: this.props.reduxState.vin.id,
     },
   })
-// this.props.history.push('/damageform')
 }
-
-// newJob = (event) => {
-// console.log('redux state vin id', this.props.reduxState.vin.id);
-// console.log('redux state vin license', this.props.reduxState.vin.license_plate);
-//  this.props.dispatch({ type: 'ADD_JOB', payload:this.props.reduxState.vin.id})
-//  this.props.history.push(`/damageform?id=${event.currentTarget.value}`)
-// }
 
 render() {
   const { classes } = this.props;
-  // console.log(this.props.reduxState.vin.id);
+  console.log(this.state.newJobName);
   return (
 <section className='inputForm'>
   <div className='loginForm'>
@@ -100,15 +89,6 @@ render() {
               <td className='tData'>{this.props.reduxState.vin.license_plate}</td>
             </tr>
           </tbody>
-          {/* <tfoot>
-            <tr>
-              <td>
-                <button className="mainButton" value={this.props.reduxState.vin.id} onClick={this.newJob}>
-                  NEW JOB
-                </button>
-              </td>
-            </tr>
-          </tfoot> */}
         </table>
         <br />
         <form>
@@ -133,7 +113,7 @@ render() {
         </button>
         </div>
         </form>
-        <pre>{JSON.stringify(this.state)}</pre>
+        {/* <pre>{JSON.stringify(this.state)}</pre> */}
     </div>
 </section>
 );

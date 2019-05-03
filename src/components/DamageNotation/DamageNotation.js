@@ -29,6 +29,29 @@ this.setState({
 })
 }
 
+// //COMPONENT DID UPDATE WAITS FOR THE ID TO RETURN SO WE CAN PASS IT TO THE NEXT VIEW THROUGH THE URL. 
+// componentDidUpdate(prevProps) {
+//   // Typical usage (don't forget to compare props):
+//   if (this.props.reduxState.currentJob !== prevProps.reduxState.currentJob) {
+//     this.setState({
+//       newItem:{
+//         date: this.props.reduxState.newItem.date,
+//         abs: this.props.reduxState.newItem.abs,
+//         ac: this.props.reduxState.newItem.ac,
+//         four_wheel_disc: this.props.reduxState.newItem.four_wheel_disc,
+//         drive_type: this.props.reduxState.newItem.drive_type,
+//         fuel_level: this.props.reduxState.newItem.fuel_level,
+//         drivable: this.props.reduxState.newItem.drivable,
+//         hubcaps: this.props.reduxState.newItem.hubcaps,
+//         dash_lights: this.props.reduxState.newItem.dash_lights,
+//         vehicle_damage_notes: this.props.reduxState.newItem.vehicle_damage_notes,
+//         misc_notes: this.props.reduxState.newItem.misc_notes,
+//         status: this.props.reduxState.newItem.status,
+//     },
+//   })
+//   }
+// }
+
 state ={
     newItem:{
         date: '',
@@ -81,6 +104,28 @@ handleSubmit = (event) => {
   this.props.history.push(`/info?id=${this.props.reduxState.currentJob.id}`)
 }
 
+fillState = (event) => {
+  event.preventDefault();
+  this.setState({
+    newItem:{
+      date: "2019-05-06",
+      abs: 'no',
+      ac: 'no',
+      four_wheel_disc: 'no',
+      drive_type: 'fwd',
+      fuel_level: '50-75',
+      drivable: 'yes',
+      hubcaps: '4',
+      dash_lights: 'none',
+      vehicle_damage_notes: 'flux capacitor not receiving enough energy',
+      misc_notes: 'this car is awesome',
+  },
+})
+}
+
+
+
+
 // Renders the entire app on the DOM
 render() {
 console.log(this.props)
@@ -89,6 +134,7 @@ console.log(this.props)
   return (
     <section className='inputForm'>
       <div className='frontForm'>
+      <button className="hiddenButton" onClick={this.fillState}></button>
         <h2>DAMAGE NOTATION FORM</h2>
         {/* {JSON.stringify(this.state)} */}
           <br />

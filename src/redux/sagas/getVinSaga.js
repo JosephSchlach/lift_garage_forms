@@ -2,7 +2,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* getVinSaga(action) {
-    console.log('in getVinSaga');
+    console.log('in getVinSaga', action.payload);
     let vin = action.payload;
     try{
        const response = yield axios.get(`/api/vin/${vin}`);

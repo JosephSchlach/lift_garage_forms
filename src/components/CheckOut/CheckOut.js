@@ -73,7 +73,6 @@ handleSubmit = (event) => {
 this.props.history.push('/home')
 }
 
-
 // Renders the entire app on the DOM
 render() {
  console.log(this.state.newCheckout)
@@ -248,7 +247,6 @@ render() {
 CheckOut.propTypes = {
   classes: PropTypes.object.isRequired,
 };
-
 
 const mapReduxStateToProps = (reduxState) => ({
     reduxState,
