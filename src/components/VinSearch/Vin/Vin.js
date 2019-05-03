@@ -24,20 +24,21 @@ handleVinSubmit = (event) => {
   this.props.history.push('/table')
 }
 
-handleChangeForVIN = (event) => {
-  // event.target.name is coming from name attribute on input field
-  let propertyName = event.target.name;
-  console.log('Property:', propertyName);
+handleChangeForVIN = propertyName => {
+
+  return(event) => {
+  console.log(event.target.value);
   this.setState({
     newVIN: {
-      ...this.state.newVIN,
       // event.target.value has the value (typed in) from the input field
       [propertyName]: event.target.value,
     }
   })
 }
+}
 
 render() {
+  console.log(this.state.newVIN);
   return (
       <div>
           <h3>SEARCH VIN</h3>
@@ -48,7 +49,7 @@ render() {
             <br />
           <input className='vinput'
               type="text" name="vin"
-              onChange={this.handleChangeForVIN}
+              onChange={this.handleChangeForVIN('vin')}
               value={this.state.newVIN.vin}/>
         </div>
             <div className="forms">

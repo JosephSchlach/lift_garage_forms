@@ -17,21 +17,46 @@ const router = express.Router();
 //     });
 // });
 
-router.post('/', (req, res) => {
+// router.post('/', (req, res) => {
+//     let vehicle = req.body
+//     console.log( vehicle );
+//     const sqlText = `INSERT INTO "vehicle" ("vin", "year", "make", "model", "license_plate", "customer_name") VALUES ($1, $2, $3, $4, $5, $6);`;
+//     pool.query(sqlText,
+//     [ vehicle.vin, vehicle.year, vehicle.make, vehicle.model, vehicle.license_plate, vehicle.customer_name ]
+//     )
+//     .then((result) => {
+//         res.sendStatus(201);
+//     })
+//     .catch((error) => {
+//         console.log(`ERROR in POST`, error);
+//         res.sendStatus(500);
+//     });
+//     });
+
+router.post('/', async (req, res) => {
+    const client = await pool.connect();
     let vehicle = req.body
     console.log( vehicle );
-    const sqlText = `INSERT INTO "vehicle" ("vin", "year", "make", "model", "license_plate", "customer_name") VALUES ($1, $2, $3, $4, $5, $6);`;
-    pool.query(sqlText,
-    [ vehicle.vin, vehicle.year, vehicle.make, vehicle.model, vehicle.license_plate, vehicle.customer_name ]
-    )
-    .then((result) => {
-        res.sendStatus(201);
-    })
-    .catch((error) => {
-        console.log(`ERROR in POST`, error);
-        res.sendStatus(500);
-    });
-    });
+    try{
+    const addCarText = `INSERT INTO "vehicle" ("vin", "year", "make", "model", "license_plate", "customer_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;`;
+    const addJobText = `INSERT INTO "job" ("car_id", "user_id") VALUES($1, $2)`
+     await client.query('BEGIN')
+       const addCarResult = await client.query(addCarText, [ vehicle.vin, vehicle.year, vehicle.make, vehicle.model, vehicle.license_plate, vehicle.customer_name ]);
+       const carId = addCarResult.rows[0].id;
+       console.log(carId);
+
+       const addJobResult =  await client.query(addJobText, [carId, req.user.id]);
+       await client.query('COMMIT')
+       res.sendStatus(201);
+   } catch (error) {
+       await client.query('ROLLBACK')
+       console.log('Error POST CAR AND JOB', error);
+       res.sendStatus(500);
+   } finally {
+       client.release()
+   }
+ });
+
 
     router.post('/job', (req, res) => {
         let job = req.body

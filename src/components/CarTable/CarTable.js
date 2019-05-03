@@ -73,18 +73,17 @@ render() {
         <br />
         <br />
           <h3>PREVIOUS VISITS</h3>
-          {JSON.stringify(this.props.reduxState.vin)}
+          <br />
+          {/* {JSON.stringify(this.props.reduxState.vin)} */}
         <table>
           <thead>
             <tr>
-              <th className='tHead'>Intake Date</th>
               <th className='tHead'>Customer</th>
               <th className='tHead'>Plates</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className='tData'></td>
               <td className='tData'>{this.props.reduxState.vin.customer_name}</td>
               <td className='tData'>{this.props.reduxState.vin.license_plate}</td>
             </tr>
